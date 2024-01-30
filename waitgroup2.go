@@ -57,6 +57,7 @@ func main() {
 		// as we loop through URLs, first we put an empty struct to channel guard.
 		// If the channel is still empty, the process will continue to the next line.
 		// Else, the process will be blocked until there are rooms in the channel to put the empty struct.
+		//waitGroup.Add(1) // alternative to the above waitGroup.Add statement
 		guard <- struct{}{}
 
 		go func(url string) {
